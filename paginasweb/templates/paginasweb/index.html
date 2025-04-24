@@ -1,34 +1,43 @@
-{% load static %}
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    
-    <title>Página Inicial</title>
-
-    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
-
-
-
+    <title>Curiosidades sobre a Natureza</title>
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
-<h4>MENU SUPERIOR</h4>
-<ul>
-    <li>
-        <a href="{% url 'sobre' %}">  Sobre nos</a> 
-    </li>
-    <li>
-        <a href="{% url 'index' %}">  index</a> 
-    </li>
-</ul>    
-{%{% block conteudo %}
-    <h3>Página inicial</h3>
 
-    <p>Bem vindos a página inicial de Programação Web</p>
-    {% endblock conteudo %}%}
+<header>
+    <h1>Fórum de Curiosidades sobre a Natureza</h1>
+    <p>Compartilhe suas curiosidades sobre o mundo natural!</p>
+    <nav>
+        <a href="adicionar_curiosidade.html">Adicionar Curiosidade</a>
+        <a href="logout.html">Sair</a>
+    </nav>
+</header>
+
+<main>
+    <div class="curiosidades-lista">
+        <div class="curiosidade-item">
+            <h2><a href="detalhes_curiosidade.html">O Maior Animal do Mundo</a></h2>
+            <p>Descubra qual é o maior animal já registrado no planeta.</p>
+            <p><strong>Postado por:</strong> João | <strong>Data:</strong> 2025-04-24</p>
+        </div>
+
+        <div class="curiosidade-item">
+            <h2><a href="detalhes_curiosidade.html">A Árvore Mais Antiga</a></h2>
+            <p>Saiba mais sobre a árvore mais antiga do mundo e sua incrível história.</p>
+            <p><strong>Postado por:</strong> Maria | <strong>Data:</strong> 2025-04-23</p>
+        </div>
+
+        <div class="curiosidade-item">
+            <h2><a href="detalhes_curiosidade.html">A Maior Cachoeira do Mundo</a></h2>
+            <p>Conheça a maior cachoeira do planeta e o que a torna tão impressionante.</p>
+            <p><strong>Postado por:</strong> Lucas | <strong>Data:</strong> 2025-04-22</p>
+        </div>
+    </div>
+</main>
+
 </body>
 </html>
