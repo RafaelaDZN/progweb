@@ -1,43 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curiosidades sobre a Natureza</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <title>Meu Diário</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-
-<header>
-    <h1>Fórum de Curiosidades sobre a Natureza</h1>
-    <p>Compartilhe suas curiosidades sobre o mundo natural!</p>
-    <nav>
-        <a href="adicionar_curiosidade.html">Adicionar Curiosidade</a>
-        <a href="logout.html">Sair</a>
-    </nav>
-</header>
-
-<main>
-    <div class="curiosidades-lista">
-        <div class="curiosidade-item">
-            <h2><a href="detalhes_curiosidade.html">O Maior Animal do Mundo</a></h2>
-            <p>Descubra qual é o maior animal já registrado no planeta.</p>
-            <p><strong>Postado por:</strong> João | <strong>Data:</strong> 2025-04-24</p>
-        </div>
-
-        <div class="curiosidade-item">
-            <h2><a href="detalhes_curiosidade.html">A Árvore Mais Antiga</a></h2>
-            <p>Saiba mais sobre a árvore mais antiga do mundo e sua incrível história.</p>
-            <p><strong>Postado por:</strong> Maria | <strong>Data:</strong> 2025-04-23</p>
-        </div>
-
-        <div class="curiosidade-item">
-            <h2><a href="detalhes_curiosidade.html">A Maior Cachoeira do Mundo</a></h2>
-            <p>Conheça a maior cachoeira do planeta e o que a torna tão impressionante.</p>
-            <p><strong>Postado por:</strong> Lucas | <strong>Data:</strong> 2025-04-22</p>
-        </div>
-    </div>
-</main>
-
+    <h1>Meu Diário Pessoal</h1>
+    <a href="{% url 'novo_post' %}">Novo Post</a>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{% url 'ver_post' post.id %}">{{ post.titulo }}</a> - {{ post.criado_em|date:"d/m/Y H:i" }}
+            </li>
+        {% empty %}
+            <li>Nenhum post ainda.</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

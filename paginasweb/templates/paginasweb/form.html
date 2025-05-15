@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Novo Post</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Escrever Novo Post</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'index' %}">Voltar</a>
+</body>
+</html>

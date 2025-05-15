@@ -1,5 +1,4 @@
 from django.contrib import admin
-from .models import Curiosidade, Categoria
+from models import Post
 
-admin.site.register(Categoria)
-admin.site.register(Curiosidade)
+admin.site.register(Post)
